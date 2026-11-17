@@ -4,11 +4,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager | 0kbanana.com</title>
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/banana-mark.svg" />
   </head>
   <body>
     <!-- Decap CMS (formerly Netlify CMS) admin panel -->
     <!-- Edit your site content here without touching code -->
-    <script src="https://unpkg.com/decap-cms@3.4.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.7.0/dist/decap-cms.js"></script>
+    <script type="application/yaml" id="netlify-cms-config">
+backend:
+  name: github
+  repo: Korean0gson/0kbanana
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liV2A2kxxZLijpBC
+
+publish_mode: editorial_workflow
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    description: "Edit the content of your main page"
+    files:
+      - label: "Main Page Content"
+        name: "main"
+        file: "src/content/homepage.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", hint: "Shows in the browser tab and page header" }
+          - { label: "Description", name: "description", widget: "text", hint: "Short text shown under the title" }
+          - { label: "Body Content", name: "body", widget: "markdown", hint: "The main text on your page. You can add headings, links, images, etc." }
+          - label: "Affiliate Links"
+            name: "links"
+            widget: "list"
+            hint: "Add or remove links that appear on your page"
+            fields:
+              - { label: "Link Text", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+    </script>
   </body>
 </html>
