@@ -4,7 +4,7 @@
 
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/0kbanana
+  repo: Korean0gson/0kbanana
   branch: main
   base_url: https://0kbanana.com
   auth_endpoint: /api/auth
