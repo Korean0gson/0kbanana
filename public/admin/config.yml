@@ -1,17 +1,11 @@
-# Decap CMS Configuration
-# This file defines what you can edit in the admin panel at /admin
-# You can add more collections (pages, blog posts, etc.) here later
-
 backend:
   name: github
   repo: Korean0gson/0kbanana
   branch: main
-  base_url: https://0kbanana.com
-  auth_endpoint: /api/auth
+  auth_type: pkce
+  app_id: Ov23liV2A2kxxZLijpBC
 
-# Publish drafts automatically when you click "Publish"
 publish_mode: editorial_workflow
-# auto_publish: true  # uncomment this to skip the draft/review step
 
 media_folder: "public/images"
 public_folder: "/images"
@@ -35,4 +29,3 @@ collections:
             fields:
               - { label: "Link Text", name: "label", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-#
