@@ -2,8 +2,8 @@ backend:
   name: github
   repo: Korean0gson/0kbanana
   branch: main
-  auth_type: pkce
-  app_id: Ov23liV2A2kxxZLijpBC
+  base_url: https://decap-auth.john-d2e.workers.dev
+  auth_endpoint: /auth
 
 publish_mode: editorial_workflow
 
