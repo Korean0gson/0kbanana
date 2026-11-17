@@ -1,0 +1,38 @@
+---
+const { title, description, affiliateLinks } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/banana-mark.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <img src="/banana-mark.svg" alt="Logo" class="logo" />
+        <h1>{title}</h1>
+      </header>
+      <main>
+        <p class="description">{description}</p>
+        <div class="content">
+          <slot />
+        </div>
+        {affiliateLinks && affiliateLinks.length > 0 && (
+          <div class="links">
+            {affiliateLinks.map((link) => (
+              <a href={link.url} target="_blank" rel="noopener noreferrer" class="link-card">
+                <span class="link-text">{link.label}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </main>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>

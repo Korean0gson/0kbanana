@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import homepage from '../content/homepage.md';
+
+// Content is loaded from src/content/homepage.md — the file Decap CMS edits.
+// When you change content in the CMS admin panel at /admin, it updates this
+// file in your GitHub repo and Cloudflare Pages automatically rebuilds.
+const { title, description, links } = homepage;
+const { Content } = await homepage.render();
+---
+
+<Layout title={title} description={description} affiliateLinks={links}>
+  <Content />
+</Layout>
