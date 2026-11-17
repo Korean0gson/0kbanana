@@ -1,6 +1,10 @@
 ---
+import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Content, { title, description, links } from '../content/homepage.md';
+
+const entry = await getEntry('homepage', 'homepage');
+const { Content } = await entry.render();
+const { title, description, links } = entry.data;
 ---
 
 <Layout title={title} description={description} affiliateLinks={links}>
